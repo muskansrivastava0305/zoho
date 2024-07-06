@@ -5,7 +5,6 @@ import Marketing_comp from "./Marketing_comp";
 function AppsComp() {
   const [sales, setSales] = useState(true);
   const [marketing, setMarketing] = useState(false);
-  const [visibleComponent, setVisibleComponent] = useState(null);
 
   const AppNavData = [
     {
@@ -45,11 +44,6 @@ function AppsComp() {
     }
   }
 
-//   useEffect(() => {
-//     if (sales) setVisibleComponent("sales");
-//     if (marketing) setVisibleComponent("marketing");
-//   }, [sales, marketing]);
-
   const displayComponent = [
     {
         name: sales,
@@ -63,8 +57,8 @@ function AppsComp() {
 
 
   return (
-    <div className=" w-full py-8  justify-between  flex">
-      <div className=" border-r border-r-[#8080804d] pl-2 pr-4 w-72 bg-white flex flex-col gap-1 items-start">
+    <div className=" w-full max-w-[1380px] my-0 mx-auto py-8  justify-between  flex">
+      <div className=" border-r border-r-[#8080804d] pl-2 pr-4 w-80 bg-white flex flex-col gap-1 items-start">
         {AppNavData.map((item) => (
           <button
             onMouseEnter={() => handleAppComponent(item.name)}

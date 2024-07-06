@@ -62,7 +62,7 @@ function Sales_comp() {
   return (
     <div className=" pb-[5%] bg-white">
       <Nav_heading name="Sales" />
-      <div className=" flex flex-wrap">
+      <div className=" flex overflow-y-scroll h-[53vh] justify-center flex-wrap">
         {salesData.map((item) => (
           <Nav_Cards
             name={item.name}

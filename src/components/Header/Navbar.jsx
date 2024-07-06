@@ -143,7 +143,6 @@ function Navbar() {
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
-        setProduct(false);
         setCompany(false);
       }
     }
@@ -250,7 +249,7 @@ function Navbar() {
               <i className="text-gray-500 text-end fa-solid fa-xmark"></i>
             </button>
           </div>
-          <div className="w-full transition-all duration-300 min-h-[70vh] bg-white">
+          <div className="w-full transition-all duration-300 max-h-[70vh] h-[70vh] bg-white">
             {/* {AppComp && <AppsComp />}
       {SuitesCompData && <SuitesComp />} */}
             {displayComponent.map((item) => (
