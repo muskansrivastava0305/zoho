@@ -60,9 +60,9 @@ function Sales_comp() {
         },
       ];
   return (
-    <div className="pb-[5%] bg-white">
+    <div className=" pb-[5%] bg-white">
       <Nav_heading name="Sales" />
-      <div className=" flex px-5 flex-wrap">
+      <div className=" flex flex-wrap">
         {salesData.map((item) => (
           <Nav_Cards
             name={item.name}

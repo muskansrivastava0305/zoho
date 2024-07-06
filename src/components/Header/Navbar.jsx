@@ -14,7 +14,6 @@ function Navbar() {
   const [dropdown, setDropdown] = useState("");
   const navbarRef = useRef(null);
 
-
   const subNavData = [
     {
       name: "Products",
@@ -96,10 +95,12 @@ function Navbar() {
 
   function handlecompanyDropdown() {
     setCompany(!company);
+    setProduct(false);
   }
 
   function handleProductDropdown() {
     setProduct(!product);
+    setCompany(false);
   }
 
   function handleNavbar() {
@@ -109,7 +110,6 @@ function Navbar() {
   function handleSubNavbar(name) {
     setDropdown(dropdown === name ? "" : name);
   }
-
 
   useEffect(() => {
     function handleScroll() {
@@ -127,9 +127,26 @@ function Navbar() {
     };
   }, []);
 
+  const displayComponent = [
+    {
+      name: AppComp,
+      component: <AppsComp />,
+    },
+    {
+      name: SuitesCompData,
+      component: <SuitesComp />,
+    },
+  ];
+
+  //   useEffect(() => {
+  //     if (sales) setVisibleComponent("sales");
+  //     if (marketing) setVisibleComponent("marketing");
+  //   }, [sales, marketing]);
+
   return (
     <div>
-        {/* large screen view  */}
+      {/* large screen view  */}
+
       <nav className="fixed bg-white w-full">
         <div className="border-b border-b-[#e7ebf0] p-4 flex justify-between items-center">
           <div className=" pl-0 sm:pl-10 gap-4 flex items-center">
@@ -140,7 +157,7 @@ function Navbar() {
                 alt="Logo"
               />
             </div>
-            <div className=" hidden lg:inline-block">
+            <div className="hidden lg:inline-block">
               <ul className="font-light gap-8 flex">
                 <li
                   onClick={handleProductDropdown}
@@ -168,60 +185,73 @@ function Navbar() {
               </ul>
             </div>
           </div>
-          <div className=" hidden lg:flex gap-4">
+          <div className="hidden lg:flex gap-4">
             <button className="text-gray-700">Sign in</button>
             <button className="px-4 py-2 rounded-sm text-red-500 border border-red-500">
               Sign up
             </button>
           </div>
         </div>
-        {product && (
-          <div className="w-full absolute">
-            <div className="relative px-7 pt-4 bg-[#f8f9fb] flex gap-10">
-              <ul className="text-gray-700 font-light flex gap-8 border-r pr-10 border-r-gray-400">
-                {subNavData.map((item) => (
-                  <li
-                    key={item.name}
-                    className={` ${
-                      activeSubNav === item.name
-                        ? "border-b-[#f60014]"
-                        : "border-b-transparent"
-                    } cursor-pointer border-b-2 pb-4 border-b-red-800`}
-                    onClick={() => handleSubNavComponent(item.name)}
-                  >
-                    {item.name}
-                  </li>
-                ))}
-              </ul>
-              <div className="text-[#056cb8] flex gap-3 font-light uppercase">
-                <div>Explore all products</div>
-                <i className="fa-solid fa-angle-right"></i>
-              </div>
-              <button
-                onClick={handleProductDropdown}
-                className="absolute right-2 mx-5 rounded-full top-2.5 shadow bg-white p-2 flex justify-center items-center"
+        <div
+          className={`w-full absolute transition-all duration-300 ${
+            product ? " opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="relative px-7 pt-4 bg-[#f8f9fb] flex gap-10">
+            <ul className="text-gray-700 font-light flex gap-8 border-r pr-10 border-r-gray-400">
+              {subNavData[0].subItem.map((subItem) => (
+                <li
+                  key={subItem.name}
+                  className={`${
+                    activeSubNav === subItem.name
+                      ? "border-b-[#f60014]"
+                      : "border-b-transparent"
+                  } cursor-pointer border-b-2 pb-4 border-b-red-800`}
+                  onClick={() => handleSubNavComponent(subItem.name)}
+                >
+                  {subItem.name}
+                </li>
+              ))}
+            </ul>
+            <div className="text-[#056cb8] flex gap-3 font-light uppercase">
+              <div>Explore all products</div>
+              <i className="fa-solid fa-angle-right"></i>
+            </div>
+            <button
+              onClick={handleProductDropdown}
+              className="absolute right-2 mx-5 rounded-full top-2.5 shadow bg-white p-2 flex justify-center items-center"
+            >
+              <i className="text-gray-500 text-end fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div className="w-full transition-all duration-300 h-[70vh] bg-white">
+            {/* {AppComp && <AppsComp />}
+      {SuitesCompData && <SuitesComp />} */}
+            {displayComponent.map((item) => (
+              <div
+                className={`${
+                  item.name ? "opacity-100" : "opacity-0 pointer-events-none"
+                }transition-opacity duration-500 ease-in-out transform`}
               >
-                <i className="text-gray-500 text-end fa-solid fa-xmark"></i>
-              </button>
-            </div>
-            <div className="w-full h-[70vh] bg-white">
-              {AppComp && <AppsComp />}
-              {SuitesCompData && <SuitesComp />}
-            </div>
+                {item.name && item.component}
+              </div>
+            ))}
           </div>
-        )}
-        {company && (
-          <div className="h-[20vh] w-60 top-20 rounded-md px-6 py-2 left-[24rem] bg-white absolute">
-            <div>
-              <ul>
-                <li className="pb-3">About us</li>
-                <li className="pb-3">Careers</li>
-                <li className="pb-3">Press</li>
-                <li className="pb-3">Blog</li>
-              </ul>
-            </div>
+        </div>
+        <div
+          className={`transition-all duration-150 ${
+            company ? "translate-y-0" : "opacity-0 translate-y-4"
+          } absolute left-[24rem] top-20 w-60  rounded-md px-6 py-2 bg-white`}
+        >
+          <div>
+            <ul>
+              <li className="pb-3">About us</li>
+              <li className="pb-3">Careers</li>
+              <li className="pb-3">Press</li>
+              <li className="pb-3">Blog</li>
+            </ul>
           </div>
-        )}
+        </div>
       </nav>
 
       {/* mobile and tablet view */}
@@ -229,10 +259,19 @@ function Navbar() {
         <div className=" flex">
           <button
             onClick={handleNavbar}
-            className=" py-4 px-5 text-xl bg-black text-white">
-            {navbar ? <i class="fa-solid fa-xmark"></i> :<i class="fa-solid fa-bars"></i> }
+            className=" py-4 px-5 text-xl bg-black text-white"
+          >
+            {navbar ? (
+              <i class="fa-solid fa-xmark"></i>
+            ) : (
+              <i class="fa-solid fa-bars"></i>
+            )}
           </button>
-          <div className={`${isScrolled ? "bg-[#f60014] text-white" : "bg-white text-[#f60014]"} transition-all duration-500 flex justify-center items-center font-semibold w-full`}>
+          <div
+            className={`${
+              isScrolled ? "bg-[#f60014] text-white" : "bg-white text-[#f60014]"
+            } transition-all duration-500 flex justify-center items-center font-semibold w-full`}
+          >
             <button className=" uppercase">Sign up for free</button>
           </div>
         </div>
@@ -241,7 +280,10 @@ function Navbar() {
             navbar ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }  duration-300 border border-gray-200 absolute bottom-16 rounded-md bg-white w-80 max-h-[70vh] overflow-y-scroll px-5 py-4 left-1`}
         >
-          <ul ref={navbarRef} className=" border-b border-b-gray-300 border-dashed pb-5">
+          <ul
+            ref={navbarRef}
+            className=" border-b border-b-gray-300 border-dashed pb-5"
+          >
             {subNavData.map((item) => (
               <li
                 className=" py-2 font-light text-gray-900"
@@ -251,7 +293,11 @@ function Navbar() {
                   <div>{item.name}</div>
                   {item.subItem && (
                     <div>
-                      <i className={`${dropdown === item.name ? "rotate-180" : "rotate-0"} transition-all duration-700  fa-solid fa-caret-down`}></i>
+                      <i
+                        className={`${
+                          dropdown === item.name ? "rotate-180" : "rotate-0"
+                        } transition-all duration-700  fa-solid fa-caret-down`}
+                      ></i>
                     </div>
                   )}
                 </div>
@@ -272,8 +318,12 @@ function Navbar() {
             ))}
           </ul>
           <div className="flex py-1 flex-col justify-start items-start">
-            <button className=" py-2 text-red-500 font-semibold">Sign In</button>
-            <button className="font-light text-gray-700">All QRDine-In Products</button>
+            <button className=" py-2 text-red-500 font-semibold">
+              Sign In
+            </button>
+            <button className="font-light text-gray-700">
+              All QRDine-In Products
+            </button>
           </div>
         </div>
       </nav>

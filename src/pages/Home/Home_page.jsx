@@ -36,8 +36,8 @@ function Home_page() {
   ];
   return (
     <div>
-      <div className=" px-5 sm:px-0 relative z-[-1] flex lg:flex-row gap-12 lg:gap-0 flex-col items-center lg:items-start justify-evenly flex-wrap pt-[30%] pb-20 bg-[#f8f9fb]">
-        <div className=" w-full text-center lg:text-start  lg:w-[35%] pr-0 pl-0 sm:pr-14 sm:pl-14 lg:pr-14">
+      <div className=" px-5 sm:px-0 relative z-[-1] flex lg:flex-row gap-12 lg:gap-0 flex-col items-center lg:items-start justify-evenly flex-wrap pt-[30%] sm:pt-40 pb-20 bg-[#f8f9fb]">
+        <div className=" w-full text-center lg:text-start  lg:w-[35%] px-2 xl:px-14">
           <div>
             <div className=" text-5xl text-black pb-8">
               Your life's work, powered by our life's work
@@ -126,11 +126,12 @@ function Home_page() {
             is a boon for all."
           </div>
           <div className=" flex items-center gap-3">
-            <div className=" w-24">
-                <img src="" alt="" />
+            <div className=" w-16 text-white flex justify-center items-center bg-black h-16 rounded-full">
+                {/* <img src="" alt="" /> */}
+                img
             </div>
             <div>
-              <div>Kajal Shrivastava</div>
+              <div>Kajal Shrivastawa</div>
               <div className=" text-gray-800 font-light">CEO , kandatechnology.com</div>
             </div>
           </div>
