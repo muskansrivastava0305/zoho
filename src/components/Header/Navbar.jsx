@@ -210,8 +210,8 @@ function Navbar() {
             </div>
           </div>
           <div className="hidden lg:flex gap-4">
-            <button className="text-gray-700">Sign in</button>
-            <button className="px-4 py-2 rounded-sm text-red-500 border border-red-500">
+            <button className="text-gray-700 ">Sign in</button>
+            <button className= {`${isScrolled ? 'bg-[#f60014] text-white' : 'bg-transparent text-[#f60014]' } transition-all ease-in-out duration-300 px-4 py-1.5 rounded-sm border border-[#f60014] `} >
               Sign up
             </button>
           </div>
