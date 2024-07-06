@@ -205,9 +205,8 @@ function Navbar() {
         <div className=" flex">
           <button
             onClick={handleNavbar}
-            className=" py-4 px-5 text-xl bg-black text-white"
-          >
-            <i class="fa-solid fa-bars"></i>
+            className=" py-4 px-5 text-xl bg-black text-white">
+            {navbar ? <i class="fa-solid fa-xmark"></i> :<i class="fa-solid fa-bars"></i> }
           </button>
           <div className=" text-white flex justify-center items-center bg-[#f60014] font-semibold w-full">
             <button className=" uppercase">Sign up for free</button>
@@ -228,13 +227,13 @@ function Navbar() {
                   <div>{item.name}</div>
                   {item.subItem && (
                     <div>
-                      <i className="fa-solid fa-caret-down"></i>
+                      <i className={`${dropdown === item.name ? "rotate-180" : "rotate-0"} transition-all duration-700  fa-solid fa-caret-down`}></i>
                     </div>
                   )}
                 </div>
                 {item.subItem && (
                   <div
-                    className={`transition-all duration-1000 overflow-hidden ${
+                    className={`transition-all duration-700 overflow-hidden ${
                       dropdown === item.name ? "max-h-screen" : "max-h-0"
                     }`}
                   >
