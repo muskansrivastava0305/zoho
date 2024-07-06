@@ -10,6 +10,7 @@ function Navbar() {
   const [SuitesCompData, setSuitesComp] = useState(false);
   const [activeSubNav, setActiveSubNav] = useState("Apps");
   const [navbar, setNavbar] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [dropdown, setDropdown] = useState("");
   const navbarRef = useRef(null);
 
@@ -109,6 +110,22 @@ function Navbar() {
     setDropdown(dropdown === name ? "" : name);
   }
 
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 200) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div>
@@ -215,7 +232,7 @@ function Navbar() {
             className=" py-4 px-5 text-xl bg-black text-white">
             {navbar ? <i class="fa-solid fa-xmark"></i> :<i class="fa-solid fa-bars"></i> }
           </button>
-          <div className="flex justify-center items-center bg-white text-[#f60014] font-semibold w-full">
+          <div className={`${isScrolled ? "bg-[#f60014] text-white" : "bg-white text-[#f60014]"} transition-all duration-500 flex justify-center items-center font-semibold w-full`}>
             <button className=" uppercase">Sign up for free</button>
           </div>
         </div>
