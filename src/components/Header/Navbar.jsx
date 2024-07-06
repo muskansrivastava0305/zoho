@@ -10,12 +10,67 @@ function Navbar() {
   const [SuitesCompData, setSuitesComp] = useState(false);
   const [activeSubNav, setActiveSubNav] = useState("Apps");
   const [navbar, setNavbar] = useState(false);
+  const [dropdown, setDropdown] = useState("");
 
   const subNavData = [
-    { name: "Apps" },
-    { name: "Suites" },
-    { name: "Zoho One" },
-    { name: "Marketplace" },
+    {
+      name: "Products",
+      subItem: [
+        {
+          name: "Apps",
+        },
+        {
+          name: "Suites",
+        },
+        {
+          name: "Zoho One",
+        },
+
+        {
+          name: "Marketplace",
+        },
+      ],
+    },
+    {
+      name: "Customer",
+    },
+    {
+      name: "Company",
+      subItem: [
+        {
+          name: "About",
+        },
+        {
+          name: "Our story",
+        },
+        {
+          name: "Press",
+        },
+        {
+          name: "Events",
+        },
+        {
+          name: "Careers",
+        },
+      ],
+    },
+    {
+      name: "More",
+      subItem: [
+        {
+          name: "Blog",
+        },
+        {
+          name: "Community",
+        },
+        {
+          name: "Support",
+        },
+        {
+          name: "Contact us",
+        },
+      ],
+    },
   ];
 
   function handleSubNavComponent(name) {
@@ -46,6 +101,10 @@ function Navbar() {
 
   function handleNavbar() {
     setNavbar(!navbar);
+  }
+
+  function handleSubNavbar(name) {
+    setDropdown(dropdown === name ? "" : name);
   }
   return (
     <div>
@@ -155,46 +214,43 @@ function Navbar() {
           </div>
         </div>
         <div
-          className={`${ navbar ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4" }  duration-300 border border-gray-200 absolute bottom-16 rounded-md bg-white w-72 min-h-44 p-3 left-1`}
+          className={`${
+            navbar ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }  duration-300 border border-gray-200 absolute bottom-16 rounded-md bg-white w-72 max-h-[70vh] overflow-y-scroll p-3 left-1`}
         >
-          <ul>
-            <li>
-              <div className="flex justify-between items-center cursor-pointer">
-                <div>Products</div>
-                <div>
-                  <i className="fa-solid fa-caret-down"></i>
+          <ul className=" border-b border-b-gray-300 border-dashed pb-5">
+            {subNavData.map((item) => (
+              <li
+                className=" py-2 font-light text-gray-800"
+                onClick={() => handleSubNavbar(item.name)}
+              >
+                <div className="flex justify-between items-center cursor-pointer">
+                  <div>{item.name}</div>
+                  {item.subItem && (
+                    <div>
+                      <i className="fa-solid fa-caret-down"></i>
+                    </div>
+                  )}
                 </div>
-              </div>
-              <div>
-                <ul>
-                  <li>About</li>
-                  <li>Our Story</li>
-                  <li>Career</li>
-                  <li>Events</li>
-                </ul>
-              </div>
-            </li>
-            <li>Customers</li>
-            <li>
-              <div className="flex justify-between items-center cursor-pointer">
-                <div>Company</div>
-                <div>
-                  <i className="fa-solid fa-caret-down"></i>
-                </div>
-              </div>
-              <div>
-                <ul>
-                  <li>About</li>
-                  <li>Our Story</li>
-                  <li>Career</li>
-                  <li>Events</li>
-                </ul>
-              </div>
-            </li>
+                {item.subItem && (
+                  <div
+                    className={`transition-all duration-1000 overflow-hidden ${
+                      dropdown === item.name ? "max-h-screen" : "max-h-0"
+                    }`}
+                  >
+                    {item.subItem.map((subItem) => (
+                      <ul className=" py-2 pl-3">
+                        <li>{subItem.name}</li>
+                      </ul>
+                    ))}
+                  </div>
+                )}
+              </li>
+            ))}
           </ul>
-          <div className="flex flex-col justify-start items-start">
-            <button className="text-red-500 font-semibold">Sign In</button>
-            <button className="font-light">All QRDine-In Products</button>
+          <div className="flex py-1 flex-col justify-start items-start">
+            <button className=" py-2 text-red-500 font-semibold">Sign In</button>
+            <button className="font-light text-gray-700">All QRDine-In Products</button>
           </div>
         </div>
       </nav>
