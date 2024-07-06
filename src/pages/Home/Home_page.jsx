@@ -48,7 +48,7 @@ function Home_page() {
               that values your privacy.
             </div>
             <div className=" flex justify-center lg:justify-start">
-              <button className=" flex justify-between gap-10 bg-[#d90000] rounded-sm text-white p-4">
+              <button className=" flex justify-between gap-10 bg-[#d90000] hover:bg-white hover:text-[#f60014] border border-[#f60014]  rounded-sm text-white p-4">
                 <div> GET STARTED FOR FREE</div>
                 <div>
                   <i class="fa-solid fa-chevron-right"></i>
