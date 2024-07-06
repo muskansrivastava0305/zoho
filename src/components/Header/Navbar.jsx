@@ -223,7 +223,7 @@ function Navbar() {
           }`}
         >
           <div className="relative px-7 pt-4 bg-[#f8f9fb] flex gap-10">
-            <ul className="text-gray-700 font-light flex gap-8 border-r pr-10 border-r-gray-400">
+            <ul className="text-gray-700 font-light flex gap-8 ">
               {subNavData[0].subItem.map((subItem) => (
                 <li
                   key={subItem.name}
@@ -238,8 +238,8 @@ function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="text-[#056cb8] flex gap-3 font-light uppercase">
-              <div>Explore all products</div>
+            <div className="border-l-gray-400 pl-10 border-l mb-3.5 flex items-center text-[#056cb8] flex gap-3 font-light uppercase">
+              <div className=" ">Explore all products</div>
               <i className="fa-solid fa-angle-right"></i>
             </div>
             <button
