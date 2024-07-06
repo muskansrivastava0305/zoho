@@ -215,7 +215,7 @@ function Navbar() {
             className=" py-4 px-5 text-xl bg-black text-white">
             {navbar ? <i class="fa-solid fa-xmark"></i> :<i class="fa-solid fa-bars"></i> }
           </button>
-          <div className=" text-white flex justify-center items-center bg-[#f60014] font-semibold w-full">
+          <div className="flex justify-center items-center bg-white text-[#f60014] font-semibold w-full">
             <button className=" uppercase">Sign up for free</button>
           </div>
         </div>
