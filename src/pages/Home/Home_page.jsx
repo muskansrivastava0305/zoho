@@ -36,7 +36,7 @@ function Home_page() {
   ];
   return (
     <div>
-      <div className=" px-5 sm:px-0 relative z-[-1] flex lg:flex-row gap-12 lg:gap-0 flex-col items-center lg:items-start justify-evenly flex-wrap pt-40 pb-20 bg-[#f8f9fb]">
+      <div className=" px-5 sm:px-0 relative z-[-1] flex lg:flex-row gap-12 lg:gap-0 flex-col items-center lg:items-start justify-evenly flex-wrap pt-[30%] pb-20 bg-[#f8f9fb]">
         <div className=" w-full text-center lg:text-start  lg:w-[35%] pr-0 pl-0 sm:pr-14 sm:pl-14 lg:pr-14">
           <div>
             <div className=" text-5xl text-black pb-8">

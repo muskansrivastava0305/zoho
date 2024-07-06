@@ -112,6 +112,7 @@ function Navbar() {
 
   return (
     <div>
+        {/* large screen view  */}
       <nav className="fixed bg-white w-full">
         <div className="border-b border-b-[#e7ebf0] p-4 flex justify-between items-center">
           <div className=" pl-0 sm:pl-10 gap-4 flex items-center">
@@ -205,6 +206,8 @@ function Navbar() {
           </div>
         )}
       </nav>
+
+      {/* mobile and tablet view */}
       <nav className=" fixed lg:hidden bottom-0 left-0 w-full">
         <div className=" flex">
           <button
