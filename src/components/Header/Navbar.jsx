@@ -13,6 +13,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdown, setDropdown] = useState("");
   const navbarRef = useRef(null);
+  const ref = useRef(null);
 
   const subNavData = [
     {
@@ -138,10 +139,21 @@ function Navbar() {
     },
   ];
 
-  //   useEffect(() => {
-  //     if (sales) setVisibleComponent("sales");
-  //     if (marketing) setVisibleComponent("marketing");
-  //   }, [sales, marketing]);
+  // close navar when click anywhere on the screen -----
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setNavbar(false);
+        setProduct(false);
+        setCompany(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
 
   return (
     <div>
@@ -193,6 +205,7 @@ function Navbar() {
           </div>
         </div>
         <div
+          ref={ref}
           className={`w-full absolute transition-all duration-300 ${
             product ? " opacity-100" : "max-h-0 opacity-0"
           }`}
@@ -224,7 +237,7 @@ function Navbar() {
               <i className="text-gray-500 text-end fa-solid fa-xmark"></i>
             </button>
           </div>
-          <div className="w-full transition-all duration-300 h-[70vh] bg-white">
+          <div className="w-full transition-all duration-300 min-h-[70vh] bg-white">
             {/* {AppComp && <AppsComp />}
       {SuitesCompData && <SuitesComp />} */}
             {displayComponent.map((item) => (
@@ -239,6 +252,7 @@ function Navbar() {
           </div>
         </div>
         <div
+          ref={ref}
           className={`transition-all duration-150 ${
             company ? "translate-y-0" : "opacity-0 translate-y-4"
           } absolute left-[24rem] top-20 w-60  rounded-md px-6 py-2 bg-white`}

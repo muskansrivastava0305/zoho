@@ -35,7 +35,7 @@ function Home_page() {
     },
   ];
   return (
-    <div>
+    <div >
       <div className=" px-5 sm:px-0 relative z-[-1] flex lg:flex-row gap-12 lg:gap-0 flex-col items-center lg:items-start justify-evenly flex-wrap pt-[30%] sm:pt-40 pb-20 bg-[#f8f9fb]">
         <div className=" w-full text-center lg:text-start  lg:w-[35%] px-2 xl:px-14">
           <div>
