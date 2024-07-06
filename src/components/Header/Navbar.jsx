@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import AppsComp from "./AppsComp";
 import SuitesComp from "./SuitesComp";
@@ -11,6 +11,8 @@ function Navbar() {
   const [activeSubNav, setActiveSubNav] = useState("Apps");
   const [navbar, setNavbar] = useState(false);
   const [dropdown, setDropdown] = useState("");
+  const navbarRef = useRef(null);
+
 
   const subNavData = [
     {
@@ -106,6 +108,8 @@ function Navbar() {
   function handleSubNavbar(name) {
     setDropdown(dropdown === name ? "" : name);
   }
+
+
   return (
     <div>
       <nav className="fixed bg-white w-full">
@@ -215,12 +219,12 @@ function Navbar() {
         <div
           className={`${
             navbar ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }  duration-300 border border-gray-200 absolute bottom-16 rounded-md bg-white w-72 max-h-[70vh] overflow-y-scroll p-3 left-1`}
+          }  duration-300 border border-gray-200 absolute bottom-16 rounded-md bg-white w-80 max-h-[70vh] overflow-y-scroll px-5 py-4 left-1`}
         >
-          <ul className=" border-b border-b-gray-300 border-dashed pb-5">
+          <ul ref={navbarRef} className=" border-b border-b-gray-300 border-dashed pb-5">
             {subNavData.map((item) => (
               <li
-                className=" py-2 font-light text-gray-800"
+                className=" py-2 font-light text-gray-900"
                 onClick={() => handleSubNavbar(item.name)}
               >
                 <div className="flex justify-between items-center cursor-pointer">
