@@ -211,7 +211,7 @@ function Navbar() {
           </div>
           <div className="hidden lg:flex gap-4">
             <button className="text-gray-700 ">Sign in</button>
-            <button className= {`${isScrolled ? 'bg-[#f60014] text-white' : 'bg-transparent text-[#f60014]' } transition-all ease-in-out duration-300 px-4 py-1.5 rounded-sm border border-[#f60014] `} >
+            <button className= {`${isScrolled ? 'bg-[#f60014] text-white' : 'bg-transparent text-[#f60014]' } hover:text-white hover:bg-[#f60014] transition-all ease-in-out duration-300 px-4 py-1.5 rounded-sm border border-[#f60014] `} >
               Sign up
             </button>
           </div>
@@ -293,13 +293,13 @@ function Navbar() {
               <i class="fa-solid fa-bars"></i>
             )}
           </button>
-          <div
+          <button
             className={`${
               isScrolled ? "bg-[#f60014] text-white" : "bg-white text-[#f60014]"
-            } transition-all duration-500 flex justify-center items-center font-semibold w-full`}
+            } hover:text-white hover:bg-[#f60014]  transition-all duration-500 flex justify-center items-center font-semibold w-full`}
           >
-            <button className=" uppercase">Sign up for free</button>
-          </div>
+            <div className=" uppercase">Sign up for free</div>
+          </button>
         </div>
         <div
           className={`${
