@@ -12,7 +12,7 @@ function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdown, setDropdown] = useState("");
-  const navbarRef = useRef(null);
+  const mobilenavbarRef = useRef(null);
   const ref = useRef(null);
 
   const subNavData = [
@@ -105,7 +105,7 @@ function Navbar() {
   }
 
   function handleNavbar() {
-    setNavbar(!navbar);
+        setNavbar(!navbar)
   }
 
   function handleSubNavbar(name) {
@@ -143,7 +143,6 @@ function Navbar() {
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
-        setNavbar(false);
         setProduct(false);
         setCompany(false);
       }
@@ -154,6 +153,20 @@ function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [ref]);
+
+  // for mobile devices ----
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (mobilenavbarRef.current && !mobilenavbarRef.current.contains(event.target)) {
+        setNavbar(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [mobilenavbarRef]);
 
   return (
     <div>
@@ -295,7 +308,7 @@ function Navbar() {
           }  duration-300 border border-gray-200 absolute bottom-16 rounded-md bg-white w-80 max-h-[70vh] overflow-y-scroll px-5 py-4 left-1`}
         >
           <ul
-            ref={navbarRef}
+            ref={mobilenavbarRef}
             className=" border-b border-b-gray-300 border-dashed pb-5"
           >
             {subNavData.map((item) => (
