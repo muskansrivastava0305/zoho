@@ -80,7 +80,7 @@ function AppsComp() {
       <div className="transition-all px-5 duration-300 w-fit">
         {displayComponent.map((item)=>(
          <div
-            className={`${item.name? "opacity-100": "opacity-0 pointer-events-none"}transition-opacity duration-500 ease-in-out transform`}>
+            className={`${item.name? "opacity-100": "opacity-0 pointer-events-none"} transition-opacity duration-500 ease-in-out transform bg-white`}>
             {item.name && item.component}
           </div>
         ))}

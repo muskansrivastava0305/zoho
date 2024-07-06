@@ -244,7 +244,7 @@ function Navbar() {
             </div>
             <button
               onClick={handleProductDropdown}
-              className="absolute right-2 mx-5 rounded-full top-2.5 shadow bg-white p-2 flex justify-center items-center"
+              className="absolute right-2 mx-5 rounded-full top-2.5 shadow bg-white px-2.5 py-2 flex justify-center items-center"
             >
               <i className="text-gray-500 text-end fa-solid fa-xmark"></i>
             </button>

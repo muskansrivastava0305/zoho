@@ -1,6 +1,7 @@
 import React from "react";
 import Nav_Cards from "../utils/Nav_Cards";
 import Nav_heading from "../utils/Nav_heading";
+import Appscontainer from "./Appscontainer";
 
 function Sales_comp() {
     const salesData = [
@@ -60,9 +61,9 @@ function Sales_comp() {
         },
       ];
   return (
-    <div className=" pb-[5%] bg-white">
+    <>
       <Nav_heading name="Sales" />
-      <div className=" flex overflow-y-scroll h-[53vh] justify-center flex-wrap">
+      <Appscontainer>
         {salesData.map((item) => (
           <Nav_Cards
             name={item.name}
@@ -71,8 +72,8 @@ function Sales_comp() {
             icon={item.icon}
           />
         ))}
-      </div>
-    </div>
+      </Appscontainer>
+    </>
   );
 }
 

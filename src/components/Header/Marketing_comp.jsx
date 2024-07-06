@@ -1,6 +1,7 @@
 import React from "react";
 import Nav_heading from "../utils/Nav_heading";
 import Nav_Cards from "../utils/Nav_Cards";
+import Appscontainer from "./Appscontainer";
 
 function Marketing_comp() {
     const marketingCompData =[
@@ -61,9 +62,9 @@ function Marketing_comp() {
         },
     ]
   return (
-    <div className=" pb-[5%] bg-white">
+    <>
       <Nav_heading name="Marketing" />
-      <div className=" flex overflow-y-scroll h-[53vh] justify-center flex-wrap">
+      <Appscontainer>
         {marketingCompData.map((item) => (
           <Nav_Cards
             name={item.name}
@@ -72,8 +73,8 @@ function Marketing_comp() {
             icon={item.icon}
           />
         ))}
-      </div>
-    </div>
+      </Appscontainer>
+    </>
   );
 }
 
