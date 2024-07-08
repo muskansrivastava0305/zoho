@@ -333,7 +333,8 @@ function Navbar() {
                   </div>
                 )}
               </li>
-            ))}
+            ))}  
+            
           </ul>
           <div className="flex py-1 flex-col justify-start items-start">
             <button className=" py-2 text-red-500 font-semibold">
