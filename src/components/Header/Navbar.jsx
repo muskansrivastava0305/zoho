@@ -325,11 +325,11 @@ function Navbar() {
                       dropdown === item.name ? "max-h-screen" : "max-h-0"
                     }`}
                   >
+                      <ul className=" py-2 pl-2">
                     {item.subItem.map((subItem) => (
-                      <ul className=" py-2 pl-3">
-                        <li>{subItem.name}</li>
-                      </ul>
+                        <li className=" rounded-md hover:bg-[#e7e7e76e] p-2 cursor-pointer">{subItem.name}</li>
                     ))}
+                      </ul>
                   </div>
                 )}
               </li>
