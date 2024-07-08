@@ -7,8 +7,8 @@ function Navbar() {
   const [product, setProduct] = useState(false);
   const [company, setCompany] = useState(false);
   const [AppComp, setAppComp] = useState(true);
-  const [SuitesCompData, setSuitesComp] = useState(false);
-  const [activeSubNav, setActiveSubNav] = useState("Apps");
+//   const [SuitesCompData, setSuitesComp] = useState(false);
+//   const [activeSubNav, setActiveSubNav] = useState("Apps");
   const [navbar, setNavbar] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdown, setDropdown] = useState("");
@@ -18,21 +18,21 @@ function Navbar() {
   const subNavData = [
     {
       name: "Products",
-      subItem: [
-        {
-          name: "Apps",
-        },
-        {
-          name: "Suites",
-        },
-        {
-          name: "Zoho One",
-        },
+      //   subItem: [
+      //     {
+      //       name: "Apps",
+      //     },
+      //     {
+      //       name: "Suites",
+      //     },
+      //     {
+      //       name: "Zoho One",
+      //     },
 
-        {
-          name: "Marketplace",
-        },
-      ],
+      //     {
+      //       name: "Marketplace",
+      //     },
+      //   ],
     },
     {
       name: "Customer",
@@ -76,23 +76,23 @@ function Navbar() {
     },
   ];
 
-  function handleSubNavComponent(name) {
-    switch (name) {
-      case "Apps":
-        setAppComp(true);
-        setSuitesComp(false);
-        break;
-      case "Suites":
-        setSuitesComp(true);
-        setAppComp(false);
-        break;
-      default:
-        setAppComp(false);
-        setSuitesComp(false);
-        break;
-    }
-    setActiveSubNav(name);
-  }
+//   function handleSubNavComponent(name) {
+//     switch (name) {
+//       case "Apps":
+//         setAppComp(true);
+//         setSuitesComp(false);
+//         break;
+//       case "Suites":
+//         setSuitesComp(true);
+//         setAppComp(false);
+//         break;
+//       default:
+//         setAppComp(false);
+//         setSuitesComp(false);
+//         break;
+//     }
+//     setActiveSubNav(name);
+//   }
 
   function handlecompanyDropdown() {
     setCompany(!company);
@@ -100,12 +100,12 @@ function Navbar() {
   }
 
   function handleProductDropdown() {
-    setProduct(!product);
+    setProduct(!product)
     setCompany(false);
   }
 
   function handleNavbar() {
-        setNavbar(!navbar)
+    setNavbar(!navbar);
   }
 
   function handleSubNavbar(name) {
@@ -128,22 +128,24 @@ function Navbar() {
     };
   }, []);
 
-  const displayComponent = [
-    {
-      name: AppComp,
-      component: <AppsComp />,
-    },
-    {
-      name: SuitesCompData,
-      component: <SuitesComp />,
-    },
-  ];
+//   const displayComponent = [
+//     {
+//       name: AppComp,
+//       component: <AppsComp setProduct={setProduct} product={product} />,
+//     },
+//     {
+//       name: SuitesCompData,
+//       component: <SuitesComp />,
+//     },
+//   ];
 
   // close navar when click anywhere on the screen -----
+  
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
         setCompany(false);
+        setProduct(false)
       }
     }
 
@@ -187,7 +189,7 @@ function Navbar() {
                   onClick={handleProductDropdown}
                   className="cursor-pointer flex gap-2 items-center"
                 >
-                  <div>Products</div>
+                  <div>Outlet type</div>
                   <i
                     className={`text-sm fa-solid ${
                       product ? "fa-chevron-down" : "fa-chevron-up"
@@ -211,7 +213,7 @@ function Navbar() {
           </div>
           <div className="hidden lg:flex gap-4">
             <button className="text-gray-700 ">Sign in</button>
-            <button className= {`${isScrolled ? 'bg-[#f60014] text-white' : 'bg-transparent text-[#f60014]' } hover:text-white hover:bg-[#f60014] transition-all ease-in-out duration-300 px-4 py-1.5 rounded-sm border border-[#f60014] `} >
+            <button className={`${isScrolled ? 'bg-[#f60014] text-white' : 'bg-transparent text-[#f60014]'} hover:text-white hover:bg-[#f60014] transition-all ease-in-out duration-300 px-4 py-1.5 rounded-sm border border-[#f60014] `}>
               Sign up
             </button>
           </div>
@@ -222,37 +224,11 @@ function Navbar() {
             product ? " opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="relative px-7 pt-4 bg-[#f8f9fb] flex gap-10">
-            <ul className="text-gray-700 font-light flex gap-8 ">
-              {subNavData[0].subItem.map((subItem) => (
-                <li
-                  key={subItem.name}
-                  className={`${
-                    activeSubNav === subItem.name
-                      ? "border-b-[#f60014]"
-                      : "border-b-transparent"
-                  } cursor-pointer border-b-2 pb-4 border-b-red-800`}
-                  onClick={() => handleSubNavComponent(subItem.name)}
-                >
-                  {subItem.name}
-                </li>
-              ))}
-            </ul>
-            <div className="border-l-gray-400 pl-10 border-l mb-3.5 flex items-center text-[#056cb8] flex gap-3 font-light uppercase">
-              <div className=" ">Explore all products</div>
-              <i className="fa-solid fa-angle-right"></i>
-            </div>
-            <button
-              onClick={handleProductDropdown}
-              className="absolute right-2 mx-5 rounded-full top-2.5 shadow bg-white px-2.5 py-2 flex justify-center items-center"
-            >
-              <i className="text-gray-500 text-end fa-solid fa-xmark"></i>
-            </button>
-          </div>
           <div className="w-full transition-all duration-300 max-h-[70vh] h-[70vh] bg-white">
-            {/* {AppComp && <AppsComp />}
-      {SuitesCompData && <SuitesComp />} */}
-            {displayComponent.map((item) => (
+            {AppComp && <AppsComp setProduct={setProduct} />}
+            {/* 
+             {SuitesCompData && <SuitesComp />} */}
+            {/* {displayComponent.map((item) => (
               <div
                 className={`${
                   item.name ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -260,14 +236,14 @@ function Navbar() {
               >
                 {item.name && item.component}
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
         <div
           ref={ref}
           className={`transition-all duration-150 ${
             company ? "translate-y-0" : "opacity-0 translate-y-4"
-          } absolute left-[24rem] top-20 w-60  rounded-md px-6 py-2 bg-white`}
+          } absolute left-[24rem] top-[4.5rem] w-60  rounded-md px-6 py-2 bg-white`}
         >
           <div>
             <ul>
@@ -288,9 +264,9 @@ function Navbar() {
             className=" py-4 px-5 text-xl bg-black text-white"
           >
             {navbar ? (
-              <i class="fa-solid fa-xmark"></i>
+              <i className="fa-solid fa-xmark"></i>
             ) : (
-              <i class="fa-solid fa-bars"></i>
+              <i className="fa-solid fa-bars"></i>
             )}
           </button>
           <button

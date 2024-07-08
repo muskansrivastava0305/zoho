@@ -3,7 +3,7 @@ import Nav_Cards from "../utils/Nav_Cards";
 import Nav_heading from "../utils/Nav_heading";
 import Appscontainer from "./Appscontainer";
 
-function Sales_comp() {
+function FineDine_comp() {
     const salesData = [
         {
           name: "crm",
@@ -62,7 +62,7 @@ function Sales_comp() {
       ];
   return (
     <>
-      <Nav_heading name="Sales" />
+      <Nav_heading name="Fine dine" />
       <Appscontainer>
         {salesData.map((item) => (
           <Nav_Cards
@@ -77,4 +77,4 @@ function Sales_comp() {
   );
 }
 
-export default Sales_comp;
+export default FineDine_comp;

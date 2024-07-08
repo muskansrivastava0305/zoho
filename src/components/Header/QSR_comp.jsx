@@ -3,7 +3,7 @@ import Nav_heading from "../utils/Nav_heading";
 import Nav_Cards from "../utils/Nav_Cards";
 import Appscontainer from "./Appscontainer";
 
-function Marketing_comp() {
+function QSR_comp() {
     const marketingCompData =[
         {
             name: "Social",
@@ -63,7 +63,7 @@ function Marketing_comp() {
     ]
   return (
     <>
-      <Nav_heading name="Marketing" />
+      <Nav_heading name="QSR" />
       <Appscontainer>
         {marketingCompData.map((item) => (
           <Nav_Cards
@@ -78,4 +78,4 @@ function Marketing_comp() {
   );
 }
 
-export default Marketing_comp;
+export default QSR_comp;
