@@ -2,42 +2,43 @@ import React, { useState } from "react";
 import FineDine_comp from "./fineDine_comp";
 import QSR_comp from "./QSR_comp";
 
-function AppsComp({ setProduct }) {
+function AppsComp({ AppNavData }) {
   const [fineDine, setFineDine] = useState(true);
   const [QSR, setQsr] = useState(false);
 
-  const AppNavData = [
-    {
-      name: "Fine dine",
-    },
-    {
-      name: "QSR",
-    },
-    {
-      name: "Cafe",
-    },
-    {
-      name: "Food court",
-    },
-    {
-      name: "Cloud kitchen",
-    },
-    {
-      name: "Ice cream & desserts",
-    },
-    {
-      name: "Bakery",
-    },
-    {
-      name: "Bar & brewery",
-    },
-    {
-      name: "Pizzeria",
-    },
-    {
-      name: "Large chain",
-    },
-  ];
+//   const AppNavData = [
+//     {
+//       name: "Fine dine",
+//     },
+//     {
+//       name: "QSR",
+//     },
+//     {
+//       name: "Cafe",
+//     },
+//     {
+//       name: "Food court",
+//     },
+//     {
+//       name: "Cloud kitchen",
+//     },
+//     {
+//       name: "Ice cream & desserts",
+//     },
+//     {
+//       name: "Bakery",
+//     },
+//     {
+//       name: "Bar & brewery",
+//     },
+//     {
+//       name: "Pizzeria",
+//     },
+//     {
+//       name: "Large chain",
+//     },
+//   ];
+
 
   function handleAppComponent(name) {
     if (name === "Fine dine") {

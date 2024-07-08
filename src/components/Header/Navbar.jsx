@@ -17,22 +17,39 @@ function Navbar() {
 
   const subNavData = [
     {
-      name: "Products",
-      //   subItem: [
-      //     {
-      //       name: "Apps",
-      //     },
-      //     {
-      //       name: "Suites",
-      //     },
-      //     {
-      //       name: "Zoho One",
-      //     },
-
-      //     {
-      //       name: "Marketplace",
-      //     },
-      //   ],
+      name: "Outlet type",
+        subItem: [
+          {
+            name: "Fine dine",
+          },
+          {
+            name: "QSR",
+          },
+          {
+            name: "Cafe",
+          },
+          {
+            name: "Food court",
+          },
+          {
+            name: "Cloud kitchen",
+          },
+          {
+            name: "Ice cream & desserts",
+          },
+          {
+            name: "Bakery",
+          },
+          {
+            name: "Bar & brewery",
+          },
+          {
+            name: "Pizzeria",
+          },
+          {
+            name: "Large chain",
+          },
+        ],
     },
     {
       name: "Customer",
@@ -225,7 +242,7 @@ function Navbar() {
           }`}
         >
           <div className="w-full transition-all duration-300 max-h-[70vh] h-[70vh] bg-white">
-            {AppComp && <AppsComp setProduct={setProduct} />}
+            {AppComp && <AppsComp AppNavData={subNavData[0].subItem} />}
             {/* 
              {SuitesCompData && <SuitesComp />} */}
             {/* {displayComponent.map((item) => (
@@ -247,10 +264,9 @@ function Navbar() {
         >
           <div>
             <ul>
-              <li className="pb-3">About us</li>
-              <li className="pb-3">Careers</li>
-              <li className="pb-3">Press</li>
-              <li className="pb-3">Blog</li>
+              {subNavData[2].subItem.map((item)=>(
+                <li key={item.name} className="pb-3">{item.name}</li>
+              ))}
             </ul>
           </div>
         </div>
