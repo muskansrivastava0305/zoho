@@ -209,7 +209,7 @@ function Navbar() {
                   <div>Outlet type</div>
                   <i
                     className={`text-sm fa-solid ${
-                      product ? "fa-chevron-down" : "fa-chevron-up"
+                      product ? "fa-chevron-up" :"fa-chevron-down" 
                     }`}
                   ></i>
                 </li>
@@ -221,7 +221,7 @@ function Navbar() {
                   <div>Company</div>
                   <i
                     className={`text-sm fa-solid ${
-                      company ? "fa-chevron-down" : "fa-chevron-up"
+                      company ? "fa-chevron-up" : "fa-chevron-down"
                     }`}
                   ></i>
                 </li>
