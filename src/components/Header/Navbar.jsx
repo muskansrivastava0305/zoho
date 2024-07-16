@@ -116,7 +116,7 @@ function Navbar() {
     setProduct(false);
   }
 
-  function handleProductDropdown() {
+function handleProductDropdown() {
     setProduct(!product)
     setCompany(false);
   }
@@ -346,6 +346,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
+
     </div>
   );
 }

@@ -34,9 +34,9 @@ function Home_page() {
       icon: <i className="fas fa-users"></i>,
     },
   ];
- 
+
   return (
-    <div >
+    <div>
       <div className=" px-5 sm:px-0 relative z-[-1] flex lg:flex-row gap-12 lg:gap-0 flex-col items-center lg:items-start justify-evenly flex-wrap pt-[30%] sm:pt-40 pb-20 bg-[#f8f9fb]">
         <div className=" w-full text-center lg:text-start  lg:w-[35%] px-2 xl:px-14">
           <div>
@@ -91,7 +91,7 @@ function Home_page() {
           </div>
         </div>
       </div>
-      <div className=" mb-12 lg:mb-0 py-16 lg:py-32 flex px-4 justify-evenly lg:flex-row flex-col items-center lg:items-start  w-full bg-yellow-400">
+      <div className=" lg:mb-0 py-16 lg:py-32 flex px-4 justify-evenly lg:flex-row flex-col items-center lg:items-start  w-full bg-yellow-400">
         <div className=" flex gap-6 flex-col sm:flex-row w-full  lg:w-[40rem] border-b lg:border-r border-b-[#d0b31c] lg:border-b-0 pb-20 lg:pb-0 lg:border-r-[#d0b31c] border-dashed">
           <div className=" w-40 sm:w-96">
             <img src="https://qrdine.in/assets/img/logo.png" alt="" />
@@ -128,12 +128,89 @@ function Home_page() {
           </div>
           <div className=" flex items-center gap-3">
             <div className=" w-16 text-white flex justify-center items-center bg-black h-16 rounded-full">
-                {/* <img src="" alt="" /> */}
-                img
+              {/* <img src="" alt="" /> */}
+              img
             </div>
             <div>
               <div>Kajal Shrivastawa</div>
-              <div className=" text-gray-800 font-light">CEO , kandatechnology.com</div>
+              <div className=" text-gray-800 font-light">
+                CEO , kandatechnology.com
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* restaurant showcase banner */}
+      <div className=" bg-[#f8f9fb] text-center">
+        <div className=" py-16 sm:py-28 mx-4 sm:mx-24 md:mx-44 flex gap-4 flex-col items-center">
+          <div className=" relative uppercase font-light text-gray-800 text-sm inline-block">
+            Brand That trust us
+            <div className=" border-b top-3 right-1/2 border-b-red-800 absolute"></div>
+          </div>
+          <div className=" w-full overflow-hidden flex justify-center items-center">
+            <div className="scroll-content flex">
+              <div className="w-32">
+                <img
+                  className="w-full"
+                  src="https://i.postimg.cc/ht5tLP3q/amazon-png-logo-vector-6695.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-32">
+                <img
+                  className="w-full"
+                  src="https://i.postimg.cc/ht5tLP3q/amazon-png-logo-vector-6695.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-32">
+                <img
+                  className="w-full"
+                  src="https://i.postimg.cc/ht5tLP3q/amazon-png-logo-vector-6695.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-32">
+                <img
+                  className="w-full"
+                  src="https://i.postimg.cc/ht5tLP3q/amazon-png-logo-vector-6695.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-32">
+                <img
+                  className="w-full"
+                  src="https://i.postimg.cc/ht5tLP3q/amazon-png-logo-vector-6695.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-32">
+                <img
+                  className="w-full"
+                  src="https://i.postimg.cc/ht5tLP3q/amazon-png-logo-vector-6695.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-32">
+                <img
+                  className="w-full"
+                  src="https://i.postimg.cc/ht5tLP3q/amazon-png-logo-vector-6695.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-32">
+                <img
+                  className="w-full"
+                  src="https://i.postimg.cc/ht5tLP3q/amazon-png-logo-vector-6695.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div className=" w-full flex justify-center">
+            <div className=" hover:scale-105 transition-all ease-in-out duration-100 cursor-pointer flex gap-2 items-center uppercase font-semibold text-blue-400">
+              <p>Customer stories</p>
+              <i class="fa-solid fa-angle-right"></i>
             </div>
           </div>
         </div>
