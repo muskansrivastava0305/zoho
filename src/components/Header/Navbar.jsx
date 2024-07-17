@@ -238,10 +238,10 @@ function handleProductDropdown() {
         <div
           ref={ref}
           className={`w-full absolute transition-all duration-300 ${
-            product ? " opacity-100" : "max-h-0 opacity-0"
+            product ? " opacity-100 visible" : "max-h-0 opacity-0 invisible"
           }`}
         >
-          <div className="w-full transition-all duration-300 max-h-[70vh] h-[70vh] bg-white">
+          <div className="w-full  transition-all duration-300 max-h-[70vh] h-[70vh] bg-white">
             {AppComp && <AppsComp AppNavData={subNavData[0].subItem} />}
             {/* 
              {SuitesCompData && <SuitesComp />} */}
@@ -295,7 +295,7 @@ function handleProductDropdown() {
         </div>
         <div
           className={`${
-            navbar ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            navbar ? "opacity-100 translate-y-0 visible" : "opacity-0 translate-y-4 invisible"
           }  duration-300 border border-gray-200 absolute bottom-16 rounded-md bg-white w-80 max-h-[70vh] overflow-y-scroll px-5 py-4 left-1`}
         >
           <ul
