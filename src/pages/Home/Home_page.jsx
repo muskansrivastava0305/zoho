@@ -37,6 +37,7 @@ function Home_page() {
 
   return (
     <div>
+      
       <div className=" px-5 sm:px-0 relative z-[-1] flex lg:flex-row gap-12 lg:gap-0 flex-col items-center lg:items-start justify-evenly flex-wrap pt-[30%] sm:pt-40 pb-20 bg-[#f8f9fb]">
         <div className=" w-full text-center lg:text-start  lg:w-[35%] px-2 xl:px-14">
           <div>
@@ -140,6 +141,7 @@ function Home_page() {
           </div>
         </div>
       </div>
+
       {/* restaurant showcase banner */}
       <div className=" bg-[#f8f9fb] text-center">
         <div className=" py-16 sm:py-28 mx-4 sm:mx-24 md:mx-44 flex gap-4 flex-col items-center">
@@ -215,6 +217,7 @@ function Home_page() {
           </div>
         </div>
       </div>
+
       {/* pivacy and policy  */}
       <div class = ' flex flex-col justify-center  items-center gap-4 sm:gap-5 bg-[#e9e9e999]rounded-md p-10 sm:p-20 md:p-32 w-full '>
 
@@ -232,6 +235,7 @@ function Home_page() {
       </button>
 
     </div>
+
     {/* free demo form */}
     <div className=' flex justify-center w-full bg-white py-14 px-6 '>
       <div className=' flex flex-col-reverse justify-center items-center md:flex-row gap-16 w-[60rem] '>
@@ -273,6 +277,7 @@ function Home_page() {
 
 
     </div>
+
     </div>
   );
 }
