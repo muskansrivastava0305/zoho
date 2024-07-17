@@ -237,7 +237,7 @@ function Home_page() {
       <div className=' flex flex-col-reverse justify-center items-center md:flex-row gap-16 '>
         <form className='' >
           <h1 className='text-2xl font-semibold sm:text-3xl md:text-4xl '>Schedule a free demo</h1>
-          <p className=' text:md sm:text-lg md:text-xl '>Get in touch with our team to clarify your queries muskan</p>
+          <p className=' text:md sm:text-lg md:text-xl '>Get in touch with our team to clarify your queries</p>
           <div className=''>
           <h4>Name</h4><input type="text" id="name" className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full '  />
           </div>
