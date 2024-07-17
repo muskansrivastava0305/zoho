@@ -233,36 +233,40 @@ function Home_page() {
 
     </div>
     {/* free demo form */}
-    <div className=' flex justify-center w-full bg-white py-14 px-4 '>
-      <div className=' flex flex-col-reverse justify-center items-center md:flex-row gap-16 '>
-        <form className='' >
-          <h1 className='text-2xl font-semibold sm:text-3xl md:text-4xl '>Schedule a free demo</h1>
-          <p className=' text:md sm:text-lg md:text-xl '>Get in touch with our team to clarify your queries</p>
+    <div className=' flex justify-center w-full bg-white py-14 px-6 '>
+      <div className=' flex flex-col-reverse justify-center items-center md:flex-row gap-16 w-[60rem] '>
+        <form className=' w-full' >
+         <div className=" mb-5">
+         <h1 className='text-2xl mb-1 font-semibold sm:text-3xl md:text-4xl '>Schedule a free demo</h1>
+         <p className=' text-[15px] sm:text-[17px] text-gray-700 '>Get in touch with our team to clarify your queries</p>
+         </div>
           <div className=''>
-          <h4>Name</h4><input type="text" id="name" className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full '  />
+          <h4 className=" text-[15px]">Name</h4><input type="text" className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full '  />
           </div>
 
-          <div className='inline-block mt-4 w-1/2'>
-          <h4>Phone Number</h4><input type='number' id='phone' className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full ' />
+         <div className=" flex sm:flex-row flex-col justify-between items-center gap-3 mt-4">
+         <div className='inline-block w-full sm:w-1/2'>
+          <h4 className=" text-[15px]">Phone Number</h4><input type='number'  className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full ' />
           </div>
 
-          <div className='inline-block mt-4 w-1/2' >
-          <h4 >Email</h4><input type='email' id='email' className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full ' />
+          <div className='inline-block w-full sm:w-1/2' >
+          <h4 className=" text-[15px]" >Email</h4><input type='email' className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full ' />
           </div>
+         </div>
 
           <div className='mt-4'>
-          <h4>City</h4><input type='text' id='city'className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full '/>
+          <h4 className=" text-[15px]">City</h4><input type='text' className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full '/>
           </div>
          <div className='mt-4'>
-          <h4 className='mt-4'>Restaurant Name</h4><input type='text' id='text'className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full ' />
+          <h4 className=" text-[15px]" >Restaurant Name</h4><input type='text'className='bg-[#f5f8fa] rounded-xl border border-[#e3e3e3] p-1.5 w-full ' />
          </div>
 
         <div className=' flex justify-end items-center w-full mt-4'>
-        <button className='  border bg-red-700 rounded-xl text-whitem px-4 py-3 font-semibold text-white'>Submit
+        <button className='  border bg-red-700 rounded-lg text-whitem px-4 py-3 font-semibold text-white'>Submit
         </button>
         </div>
         </form>
-        <div className=' w-56 sm:w-80'>
+        <div className=' w-[75%] sm:w-2/4'>
           <img src='https://d28ewddc5mocr5.cloudfront.net/images/scheduale-form_md.webp ' className=' w-full h-full' />
         </div>
       </div>
