@@ -1,108 +1,164 @@
 import React from "react";
 import { Link } from "react-router-dom";
 function Footer() {
-    return (
-        <div>
-            <div className="flex gap-5 content-center pl-52 pt-20 pb-14">
-
-
-                <div className="flex flex-col items-start gap-2 mr-10">
-                    <h1 className=" font-bold text-lg">POS</h1>
-                    <ul className=" ">
-                        <li>Billing</li>
-                        <li>Inventory</li>
-                        <li>Reporting</li>
-                        <li>Online Ordering</li>
-                        <li>CRM</li>
-                        <li>Menu</li>
-                    </ul>
-                    <button className="
-                    bg-black text-white border rounded-md p-1 text-sm">Take a Free demo</button>
-                </div>
-
-
-                <div className="flex flex-col items-start gap-3 mr-10">
-                    <h1 className=" font-bold  text-lg">Add-ons</h1>
-                    <ul className="">
-                        <li>Marketplace</li>
-                        <li>Payrol</li>
-                        <li>Invoice</li>
-                        <li>Tasks</li>
-                        <li>Marketing Hub</li>
-                        <li>Integrations</li>
-                    </ul>
-                </div>
-
-
-                <div className="flex flex-col items-start gap-3 mr-10">
-                    <h1 className=" font-bold  text-lg">Outlet types</h1>
-                    <ul className="">
-                        <li>Fine Dine</li>
-                        <li>QSR</li>
-                        <li>Cafe</li>
-                        <li>Food Court</li>
-                        <li>Cloud Kitechen</li>
-                        <li>Ice Cream</li>
-                        <li>Bakery</li>
-                        <li>Bar & Brewery</li>
-                        <li>Pizzeria</li>
-                        <li>Large Chains</li>
-                    </ul>
-                </div>
-
-
-                <div className="flex flex-col items-start gap-3 mr-10">
-                    <h1 className=" font-bold  text-lg">Resources</h1>
-                    <ul className=" ">
-                        <li>Pricing</li>
-                        <li>Blog</li>
-                        <li>Careers</li>
-                        <li>Support</li>
-                        <li>About Us</li>
-                        <li>Reseller</li>
-                        <li>Magazine</li>
-                    </ul>
-                </div>
-
-
-                <div className="flex flex-col items-start gap-3 mr-10">
-                    <h1 className=" font-bold  text-lg">Prayosha Food Services Private Limited</h1>
-                    <div>3rd Floor, Tower-A, Gopal Palace, Nehrunagar, Ambawadi, Ahmedabad, Gujarat - 380015</div>
-                </div>
+  return (
+    <div class="flex flex-col items-center py-14 justify-center w-full px-6 mb-[2rem] lg:mb-0">
+      <div class="flex items-center flex-col gap-8 md:gap-24 w-full">
+        <div class="w-full md:w-fit">
+          <div className=" flex gap-10 sm:gap-20 md:gap-28 flex-wrap justify-start lg:justify-center w-full">
+            <div class="flex flex-col items-start gap-2">
+              <h1 class="font-semibold text-lg pb-3">POS</h1>
+              <ul class="flex justify-center text-gray-700 flex-col gap-4">
+                <li>
+                  <Link>Billing</Link>
+                </li>
+                <li>
+                  <Link>Inventory</Link>
+                </li>
+                <li>
+                  <Link>Reporting</Link>
+                </li>
+                <li>
+                  <Link>Online Ordering</Link>
+                </li>
+                <li>
+                  <Link>CRM</Link>
+                </li>
+                <li>
+                  <Link>Menu</Link>
+                </li>
+              </ul>
+              <button class="bg-black py-2 px-4 mt-2 text-white border rounded-md text-sm">
+                Take a Free demo
+              </button>
             </div>
-
-
-            <div className=" flex items-center gap-10 pl-52 pt-14 pb-14">
-                <div className="h-16 w-32 ">
-                    <img src="logo.png" alt="" />
-                </div>
-                <div className="flex gap-5 ">
-                    <i class="fa-brands fa-instagram "></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                </div>
-                <div className="flex gap-10">
-                    <div className="flex gap-2">
-                        <i class="fa-solid fa-phone"></i>
-                        <p>9000000000</p>
-                    </div >
-
-                    <div className="flex gap-2">
-                        <i class="fa-regular fa-envelope"></i>
-                        <p>inquiry@qurdin.com</p>
-                    </div>
-                </div>
+            <div class="flex flex-col items-start gap-2">
+              <h1 class="font-semibold text-lg pb-3">Add-ons</h1>
+              <ul class="flex justify-center text-gray-700 flex-col gap-4">
+                <li>
+                  <Link>Marketplace</Link>
+                </li>
+                <li>
+                  <Link>Payroll</Link>
+                </li>
+                <li>
+                  <Link>Invoice</Link>
+                </li>
+                <li>
+                  <Link>Tasks</Link>
+                </li>
+                <li>
+                  <Link>Marketing Hub</Link>
+                </li>
+                <li>
+                  <Link>Integrations</Link>
+                </li>
+              </ul>
             </div>
-
-
-            <div>
-
-
+            <div class="flex flex-col items-start gap-2">
+              <h1 class="font-semibold text-lg pb-3">Outlet types</h1>
+              <ul class="flex justify-center text-gray-700 flex-col gap-4">
+                <li>
+                  <Link>Fine Dine</Link>
+                </li>
+                <li>
+                  <Link>QSR</Link>
+                </li>
+                <li>
+                  <Link>Cafe</Link>
+                </li>
+                <li>
+                  <Link>Food Court</Link>
+                </li>
+                <li>
+                  <Link>Cloud Kitchen</Link>
+                </li>
+                <li>
+                  <Link>Ice Cream</Link>
+                </li>
+                <li>
+                  <Link>Bakery</Link>
+                </li>
+                <li>
+                  <Link>Bar & Brewery</Link>
+                </li>
+                <li>
+                  <Link>Pizzeria</Link>
+                </li>
+                <li>
+                  <Link>Large Chains</Link>
+                </li>
+              </ul>
             </div>
+            <div class="flex flex-col items-start gap-3">
+              <h1 class="font-semibold text-lg pb-3">Resources</h1>
+              <ul class="flex justify-center text-gray-700 flex-col gap-4">
+                <li>
+                  <Link>Pricing</Link>
+                </li>
+                <li>
+                  <Link>Blog</Link>
+                </li>
+                <li>
+                  <Link>Careers</Link>
+                </li>
+                <li>
+                  <Link>Support</Link>
+                </li>
+                <li>
+                  <Link>About Us</Link>
+                </li>
+                <li>
+                  <Link>Reseller</Link>
+                </li>
+                <li>
+                  <Link>Magazine</Link>
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-col items-start gap-3 w-60">
+              <h1 class="font-semibold text-lg">
+                Prayosha Food Services Private Limited
+              </h1>
+              <div className=" text-gray-700">
+                3rd Floor, Tower-A, Gopal Palace, Nehrunagar, Ambawadi,
+                Ahmedabad, Gujarat - 380015
+              </div>
+            </div>
+          </div>
+          <div class="w-full mt-5">
+            <div class="flex flex-col md:flex-row items-start sm:items-center gap-8 md:gap-14">
+              <div class="w-44 flex justify-center items-center">
+                <img src="logo.png" alt="" />
+              </div>
+              <div class="flex gap-5 text-xl">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-youtube"></i>
+              </div>
+              <div class="flex items-start  flex-col md:flex-row gap-3 md:gap-10">
+                <div class="flex gap-3 text-gray-700 justify-center items-center">
+                  <i class="fa-solid fa-phone"></i>
+                  <p>+9000000000</p>
+                </div>
+                <div class="flex gap-3 text-gray-700 justify-center items-center">
+                  <i class="fa-regular fa-envelope"></i>
+                  <p>inquiry@qrdine.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-    )
+      </div>
+      <div className=" text-gray-500 text-sm mt-6">
+        <span className=" uppercase">COPYRIGHT</span> © 2024 - K & A Technology
+        Pvt. Ltd., India • <Link to="">Privacy</Link> • <Link to="">Terms</Link>{" "}
+        • <Link to="">Cancellation & Refund</Link> •
+        <Link to="">Corporate Information</Link>
+      </div>
+    </div>
+  );
 }
 
 export default Footer;
