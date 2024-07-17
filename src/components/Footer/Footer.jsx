@@ -154,7 +154,7 @@ function Footer() {
       <div className=" text-gray-500 text-sm mt-6">
         <span className=" uppercase">COPYRIGHT</span> © 2024 - K & A Technology
         Pvt. Ltd., India • <Link to="">Privacy</Link> • <Link to="">Terms</Link>{" "}
-        • <Link to="">Cancellation & Refund</Link> •{" "}
+        • <Link to="">Cancellation & Refund</Link> •
         <Link to="">Corporate Information</Link>
       </div>
     </div>
