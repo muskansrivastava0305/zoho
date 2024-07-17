@@ -72,37 +72,37 @@ function Footer() {
             </div>
 
 
-    <div className=" flex items-center gap-10 pl-52 pt-14 pb-14">
-      <div className="h-16 w-32 ">
-        <img src="logo.png" alt="" />
-      </div>
-      <div className="flex gap-5 ">
-      <i class="fa-brands fa-instagram "></i>
-      <i class="fa-brands fa-linkedin"></i>
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-youtube"></i>
-      </div>
-      <div className="flex gap-10">
-        <div className="flex gap-2">
-        <i class="fa-solid fa-phone"></i>
-        <p>9000000000</p>
-        </div >
-       
-        <div className="flex gap-2">
-        <i class="fa-regular fa-envelope"></i>
-        <p>inquiry@qurdin.com</p>
+            <div className=" flex items-center gap-10 pl-52 pt-14 pb-14">
+                <div className="h-16 w-32 ">
+                    <img src="logo.png" alt="" />
+                </div>
+                <div className="flex gap-5 ">
+                    <i class="fa-brands fa-instagram "></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div className="flex gap-10">
+                    <div className="flex gap-2">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>9000000000</p>
+                    </div >
+
+                    <div className="flex gap-2">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p>inquiry@qurdin.com</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+
+
+            </div>
         </div>
-      </div>
-    </div>
 
-
-    <div>
-
-
-    </div>
-  </div>
-
-  )
+    )
 }
 
-            export default Footer;
+export default Footer;
