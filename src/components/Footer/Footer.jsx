@@ -3,11 +3,11 @@ import React from 'react'
 function Footer() {
   return (
     <div className=' '>
-    <div className="flex md:gap-2 gap-5 justify-center ">
+    <div className="flex sm:gap-2 md:gap-2 gap-5 justify-center ">
 
 
-      <div className="flex flex-col items-start gap-3 md:gap-2 sm:mr-3 md:mr-6 mr-10">
-        <h1 className=" font-bold md:text-sm text-lg">POS</h1>
+      <div className="flex flex-col items-start gap-3 md:gap-2 sm:gap-1 sm:mr-3 md:mr-6 mr-10">
+        <h1 className=" font-bold md:text-sm sm:text-xs text-lg">POS</h1>
         <ul className=" ">
           <li>Billing</li>
           <li>Inventory</li>
@@ -16,7 +16,7 @@ function Footer() {
           <li>CRM</li>
           <li>Menu</li>
         </ul>
-        <button className="bg-black text-white border rounded-md md:p-0.5 p-1 md:text-xs text-sm">Take a Free demo</button>
+        <button className="bg-black text-white border rounded-md md:p-0.5 p-2 md:text-xs text-sm">Take a Free demo</button>
       </div>
 
 
@@ -71,12 +71,12 @@ function Footer() {
     </div>
 
 
-    <div className=" flex items-center md:gap-5 gap-10 justify-center md:pt-5 pt-10">
+    <div className=" flex items-center md:gap-5 gap-10 justify-center md:pt-5 pt-20">
       <div className="h-16 w-32 ">
         <img src="logo.png" alt="" />
       </div>
-      
-      <div className="flex md:gap-2 gap-5 md:h-5 h-10 ">
+
+      <div className="flex sm:gap-1 md:gap-2 gap-5 sm:h-3 md:h-5 h-10 ">
       <i class="fa-brands fa-instagram"></i>
       <i class="fa-brands fa-linkedin"></i>
       <i class="fa-brands fa-facebook"></i>
